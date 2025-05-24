@@ -13,5 +13,5 @@ A simple calculator application that performs basic arithmetic operations such a
 ## 💻 Technologies Used
 
 - HTML
-- CSS
+- CSS 
 - JavaScript
