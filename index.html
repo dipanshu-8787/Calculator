@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #0077b6;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #ff4500;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 2px solid #0077b6;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #0077b6;
+            color: white;
+            padding: 15px;
+            width: 50px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005f8f;
+        }
+        #result {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Calculator</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <br>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+        <h2>Result: <span id="result"></span></h2>
+    </div>
+
+    <script>
+        function add() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 + num2;
+            document.getElementById("result").innerHTML = result;
+        }
+        function sub() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 - num2;
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function mul() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 * num2;
+            document.getElementById("result").innerHTML = result;
+        }
+      
+        function div() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            if (num2 === 0) {
+                document.getElementById("result").innerHTML = "Error: Division by 0";
+            } else {
+                var result = num1 / num2;
+                document.getElementById("result").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>
